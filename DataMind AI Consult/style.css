@@ -110,15 +110,23 @@ button{
 .home_page_button button{
     text-align: center;
     padding: 10px 40px;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 16px;
     font-weight: 600;
 }
 .home_page_button .start{
     color: #fff;
+    transition: all 0.2s ease-in-out;
     background-color: var(--primary);
 }
 .home_page_button .methodology{
     color: var(--primary);
+    transition: all 0.2s ease-in-out;
     background-color: var(--secondary);
+}
+.home_page_button .start:hover{
+    background-color: rgb(49, 27, 27);
+}
+.home_page_button .methodology:hover{
+    background-color: orange;
 }
