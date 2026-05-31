@@ -154,3 +154,15 @@ button{
 .services_text p{
     font-size: 20px;
 }
+.services_cards_details{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+.services{
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    padding: 20px;
+}
