@@ -42,15 +42,14 @@ nav{
 .navigator a{
     text-decoration: none;
     color: inherit;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 600;
     font-family: inherit;
 }
 .navigator a:hover{
     cursor: pointer;
     color: var(--secondary);
     transition: all 0.2s ease-in-out;
-    border-bottom: 1px solid black;
 }
 
 button{
@@ -136,6 +135,7 @@ button{
 
 #services{
     background-color: #fff;
+    width: 100%;
 }
 .services_text{
     text-align: center;
@@ -155,14 +155,38 @@ button{
     font-size: 20px;
 }
 .services_cards_details{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding: 40px 60px;
+    gap: 25px;
 }
 .services{
-    border-radius: 10px;
-    width: 30%;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #FAF3E1;
     text-align: center;
-    padding: 20px;
+    transition: all 0.3s ease-in-out
 }
+.services img{
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.services h4 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--secondary);
+}
+
+.services p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.services:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(250, 130, 18, 0.15);
+}
+
