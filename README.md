@@ -1,6 +1,6 @@
 # 🎨 Frontend Practice
 
-This repository contains small frontend projects I built while learning and revising **HTML, CSS, and Flexbox**.
+This repository contains small frontend projects I built while learning and revising **HTML, CSS, and JavaScript**.
 
 These are practice projects — not perfect, but proof of progress. Each one helped me understand layout, styling, and responsive design a little better.
 
