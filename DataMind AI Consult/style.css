@@ -194,7 +194,7 @@ button{
     background-color: #fff;
     width: 100%;
     text-align: center;
-    padding-top: 30px;
+    padding: 120px 0;
 }
 .about_header h4{
     color: var(--secondary);
@@ -209,4 +209,39 @@ button{
 .about_body span{
     color: var(--secondary);
     font-style: normal;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 30px 90px;
+    background-color: #1C1917;
+    color: #A8A29E;
+}
+.footer_logo h2{
+    color: var(--secondary);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 36px;
+}
+.footer_nav{
+    display: flex;
+    gap: 20px;
+}
+.services_nav h3, .footer_socials h3{
+    color: var(--secondary);
+    font-family: inherit;
+    font-weight: 400;
+}
+.services_nav, .footer_socials{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.services_nav a, .footer_socials a{
+    color: #a8a29e;
+    text-decoration: none;
+}
+.footer_presence h3{
+    color: var(--secondary);
 }
