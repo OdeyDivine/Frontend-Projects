@@ -1,4 +1,4 @@
-:root{
+ :root{
     --primary: #000;
     --secondary: #FA8112;
 }
@@ -16,12 +16,12 @@ body{
 
 header{
     padding: 20px 30px;
-     width: 100%;
-     height: auto;
-     position: fixed;
-     background-color: #fff;
-     top: 0;
-     z-index: 1;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    background-color: #fff;
+    top: 0;
+    z-index: 100; /* Increased to ensure header always overlays cleanly */
 }
 
 nav{
@@ -61,7 +61,7 @@ button{
     background-color: var(--secondary);
     color: var(--primary);
     border-radius: 5px;
-        transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .contact_whatsapp a{
     text-decoration: none;
@@ -98,6 +98,8 @@ button{
 }
 
 .home_image img{
+    max-width: 100%; /* Prevents horizontal overflow blowout on scaling grids */
+    height: auto;
     object-fit: cover;
     box-shadow: 1px 3px 60px 2px rgba(250,130,18,1);
 }
@@ -140,6 +142,8 @@ button{
 .services_text{
     text-align: center;
     padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .services_text h4{
     color: var(--secondary);
@@ -194,7 +198,7 @@ button{
     background-color: #fff;
     width: 100%;
     text-align: center;
-    padding: 120px 0;
+    padding: 120px 20px; /* Ensure lateral safe-zones for phone frames */
 }
 .about_header h4{
     color: var(--secondary);
@@ -246,8 +250,154 @@ footer{
     color: var(--secondary);
 }
 
-@media (max-width:766px){
-    .navigator{
+/* Base Hidden UI elements for Desktop screens */
+.menu_toggle, .mobile_contact {
+    display: none;
+}
+
+/* ==========================================================================
+   MOBILE & TABLET OPTIMIZATIONS (Maintains Desktop view intact above 992px)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    /* Handle rigid `<br>` breakpoints safely without altering native html structure */
+    .desktop_only {
         display: none;
+    }
+
+    /* Navigation Drawer Setup */
+    .menu_toggle {
+        display: block;
+        background: transparent;
+        font-size: 26px;
+        color: var(--primary);
+        cursor: pointer;
+        z-index: 101;
+    }
+
+    .contact_us {
+        display: none; /* Hide standalone desktop utility item */
+    }
+
+    .navigator {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 100px 40px;
+        gap: 35px;
+        transition: right 0.4s ease-in-out;
+    }
+
+    .navigator.active {
+        right: 0;
+    }
+
+    .navigator a {
+        font-size: 22px;
+        width: 100%;
+    }
+
+    .mobile_contact {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .mobile_contact a {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: var(--secondary);
+        color: var(--primary) !important;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    /* Hero / Home Layout Conversion */
+    #home {
+        flex-direction: column-reverse; /* Puts typography nicely below or above image gracefully */
+        height: auto;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .home_page {
+        padding: 150px 20px 60px;
+    }
+
+    .home_image img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .home_page_button {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* About Section scaling updates */
+    .about_body p {
+        font-size: 28px;
+        line-height: 1.4;
+    }
+
+    /* Footer Responsive Grid conversion */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 50px 20px;
+    }
+
+    .footer_nav {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .home_text h1 {
+        font-size: 28px;
+    }
+
+    .home_text p {
+        font-size: 16px;
+    }
+
+    .home_page_button {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .home_page_button button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .services_text h3 {
+        font-size: 24px;
+    }
+
+    .services_text p {
+        font-size: 16px;
+    }
+
+    .services_cards_details {
+        padding: 20px;
+    }
+
+    .footer_nav {
+        flex-direction: column;
+        gap: 30px;
     }
 }
