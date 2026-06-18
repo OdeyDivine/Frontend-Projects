@@ -245,3 +245,9 @@ footer{
 .footer_presence h3{
     color: var(--secondary);
 }
+
+@media (max-width:766px){
+    .navigator{
+        display: none;
+    }
+}
